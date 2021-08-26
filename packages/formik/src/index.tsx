@@ -1,11 +1,7 @@
-export * from './Formik';
-export * from './Field';
-export * from './Form';
-export * from './withFormik';
-export * from './FieldArray';
-export * from './utils';
-export * from './types';
-export * from './connect';
-export * from './ErrorMessage';
-export * from './FormikContext';
-export * from './FastField';
+export * from './exports';
+
+import { unstable_batchedUpdates } from 'react-dom';
+import { setBatch } from './helpers/batch-helpers';
+
+// Formik for web uses react-dom batches.
+setBatch(unstable_batchedUpdates);
